@@ -1,0 +1,108 @@
+.fz30 {
+  font-size: 30px;
+}
+
+.avatarUser {
+  width: 220px;
+}
+
+.gradientAvt {
+  position: relative;
+  padding: 4px;
+  box-sizing: border-box;
+
+  background: #fff;
+  background-clip: padding-box; /* !importanté */
+  border-radius: 50%;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -3px; /* !importanté */
+    border-radius: inherit; /* !importanté */
+    //   background: linear-gradient(to right, red, orange);
+    background: #4e54c8; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #8f94fb,
+      #4e54c8
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #8f94fb,
+      #4e54c8
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+}
+
+.gradientStories {
+  position: relative;
+  padding: 3px;
+  box-sizing: border-box;
+  transition: .25s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  background: #fff;
+  background-clip: padding-box; /* !importanté */
+  border-radius: 50%;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -2px; /* !importanté */
+    border-radius: inherit; /* !importanté */
+    //   background: linear-gradient(to right, red, orange);
+    background: #e0eafc; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,
+      #cfdef3,
+      #e0eafc
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #cfdef3,
+      #e0eafc
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  }
+}
+
+.titleStories {
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fixSize {
+    width: 74px;
+    height: 74px;
+}
+
+.stories {
+    overflow-x: scroll;
+    white-space: nowrap;
+    padding: 1rem;
+    .item {
+        margin-right: 4rem;
+    }
+    .item:last-child {
+        margin-right: 0;
+    }
+
+    .hoverStories {
+        &:hover {
+            .gradientStories {
+                transform: translateY(-10px);
+            }
+            
+        }
+    }
+}
