@@ -109,10 +109,9 @@ function HomePage() {
                         <p className="text-gray-500 font-size-xs">Followed by <span className="text-gray-800 font-family-serif">mrpkhahaha</span>, <span className="text-gray-800 font-family-serif">warnermusic.vietnam</span>, <span className="text-gray-800 font-family-serif">l_.anna._l</span> + 5 <span className="text-underline-warning">more</span></p>
                     </div>
                 </div>
-
             </div>
 
-            <div className={`container`}>
+            <div className={`container mb-6 bg-checkered`}>
                 <div className={`${styles.stories}`}>
                     {
                         stories.map((item) => (
@@ -129,21 +128,36 @@ function HomePage() {
                 </div>
             </div>
             <div className="container">
-                <nav className="nav font-family-serif">
-                    <a className="nav-link justify-content-center flex-fill d-flex align-items-center active" href="#">
-                        <span className="fe fe-grid mr-2"></span> <span>POSTS</span>
-                    </a>
-                    <a className="nav-link justify-content-center flex-fill d-flex align-items-center" href="#">
-                        <span className="fe fe-tv mr-2"></span> <span>IGTV</span>
-                    </a>
-                    <a className="nav-link justify-content-center flex-fill d-flex align-items-center" href="#">
-                    <span className="fe fe-bookmark mr-2"></span> <span>SAVED</span>
-                        
+
+                <ul class="nav nav-pills mb-3 font-family-serif" id="pills-tab" role="tablist">
+                    <li class="nav-item flex-fill" role="presentation">
+                        <a class="nav-link d-flex justify-content-center align-items-center active" id="pills-posts-tab" data-toggle="pill" href="#pills-posts" role="tab" aria-controls="pills-posts" aria-selected="true">
+                            <span className="fe fe-grid mr-2"></span> <span>POSTS</span>
                         </a>
-                    <a className="nav-link justify-content-center flex-fill d-flex align-items-center" href="#">
-                    <span className="fe fe-user mr-2"></span> <span>TAGGED</span>
+                    </li>
+                    <li class="nav-item flex-fill" role="presentation">
+                        <a class="nav-link d-flex justify-content-center align-items-center" id="pills-igtv-tab" data-toggle="pill" href="#pills-igtv" role="tab" aria-controls="pills-igtv" aria-selected="false">
+                            <span className="fe fe-tv mr-2"></span> <span>IGTV</span>
                         </a>
-                </nav>
+                    </li>
+                    <li class="nav-item flex-fill" role="presentation">
+                        <a class="nav-link d-flex justify-content-center align-items-center" id="pills-saved-tab" data-toggle="pill" href="#pills-saved" role="tab" aria-controls="pills-saved" aria-selected="false">
+
+                            <span className="fe fe-bookmark mr-2"></span> <span>SAVED</span>
+                        </a>
+                    </li>
+                    <li class="nav-item flex-fill" role="presentation">
+                        <a class="nav-link d-flex justify-content-center align-items-center" id="pills-tagged-tab" data-toggle="pill" href="#pills-tagged" role="tab" aria-controls="pills-tagged" aria-selected="false">
+                            <span className="fe fe-user mr-2"></span> <span>TAGGED</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-posts" role="tabpanel" aria-labelledby="pills-posts-tab">posts</div>
+                    <div class="tab-pane fade" id="pills-igtv" role="tabpanel" aria-labelledby="pills-igtv-tab">igtv</div>
+                    <div class="tab-pane fade" id="pills-saved" role="tabpanel" aria-labelledby="pills-saved-tab">saved</div>
+                    <div class="tab-pane fade" id="pills-tagged" role="tabpanel" aria-labelledby="pills-tagged-tab">tagged</div>
+                </div>
             </div>
 
         </>
