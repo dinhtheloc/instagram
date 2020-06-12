@@ -1,24 +1,57 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './style.module.scss';
 import './style.scss';
-
+import Instafeed from 'instafeed.js';
 
 
 
 
 function HomePage() {
+    const [imagesIns, setImagesIns] = useState([]);
+
+
+    const feed = new Instafeed({
+        get: 'user',
+        userId: '11145957073',
+        accessToken: '11145957073.1677ed0.30c99e780de74513ac19e3a970def157',
+        target: 'instafeed',
+        resolution: 'standard_resolution',
+        template: '<div data-link="{{link}}" data-src="{{image}}"></div>',
+        success: (argument) => {
+            console.log(argument);
+            // imagesIns = argument;
+            setImagesIns(argument.data);
+            console.log('imagesIns', imagesIns);
+            //   argument.data.map((i) => {
+            //   console.log()
+
+            // this.setState(prevState => ({
+            //   imagesIns: [
+            //     ...prevState.imagesIns,
+            //     {
+            //       link: i.link,
+            //       img: i.images.standard_resolution.url,
+            //       likes: i.likes.count,
+            //       comments: i.comments.count,
+            //       isHover: false
+            //     }]
+            // }));
+            //   });
+        }
+    });
+    feed.run();
 
     const stories = [
         {
-            pathImage: 'https://instagram.fhan2-2.fna.fbcdn.net/v/t51.12442-15/e35/c0.270.900.900a/s150x150/25011843_140423166660707_2190057674530357248_n.jpg?_nc_ht=instagram.fhan2-2.fna.fbcdn.net&_nc_cat=111&_nc_ohc=VYNqJN6s91kAX_ZD1lV&oh=b451c07a7a743cd9c6dc17cd3de837f6&oe=5EE2ECEA',
+            pathImage: 'https://instagram.fsgn5-4.fna.fbcdn.net/v/t51.2885-15/e35/90707976_143536407176234_8897186274773102090_n.jpg?_nc_ht=instagram.fsgn5-4.fna.fbcdn.net&_nc_cat=102&_nc_ohc=gggkMJBRfSMAX_DBp_P&oh=076993dcba9162f95bd14be8c115c85e&oe=5F0BB3FA',
             title: 'To you, yes you'
         },
         {
-            pathImage: 'https://instagram.fsgn5-2.fna.fbcdn.net/v/t51.12442-15/e35/c0.291.750.750a/s150x150/68766470_1125516547643537_5325242188236739614_n.jpg?_nc_ht=instagram.fsgn5-2.fna.fbcdn.net&_nc_cat=105&_nc_ohc=aJ1NGel8BkkAX_ppLSg&oh=7d8181ee347d8ee486dff2cfa1c756c8&oe=5EE34310',
+            pathImage: 'https://scontent-sin6-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/91774977_577602593110807_3245127335149713062_n.jpg?_nc_ht=scontent-sin6-1.cdninstagram.com&_nc_cat=107&_nc_ohc=J9fN5zCLSpMAX9AQjIn&oh=986f3e1a08d853694301fb308b31c191&oe=5F0B4916',
             title: 'stories 1'
         },
         {
-            pathImage: 'https://instagram.fsgn5-7.fna.fbcdn.net/v/t51.12442-15/e35/c0.437.1125.1125a/s150x150/87828825_2863479117074103_3840606534320758182_n.jpg?_nc_ht=instagram.fsgn5-7.fna.fbcdn.net&_nc_cat=103&_nc_ohc=-hva0bK7EGAAX-QkDb4&oh=bdeae53393adf0c3ecd732b36a0bcba5&oe=5EE2D0B7',
+            pathImage: 'https://scontent-sin6-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/96620438_230574101560151_2539699626693846317_n.jpg?_nc_ht=scontent-sin6-1.cdninstagram.com&_nc_cat=111&_nc_ohc=rBF16rQRB1sAX9fCbzk&oh=82fc51ad09b2ee30160e32a821df825a&oe=5F0ECB70',
             title: 'stories 2'
         },
         {
@@ -48,6 +81,7 @@ function HomePage() {
     ];
     return (
         <>
+            <div id="instafeed" className="hidden"></div>
             <div className="container mt-6 d-flex">
                 <div className={`${styles.avatarUser}`}>
                     <div className="avatar avatar-xxl">
@@ -101,10 +135,10 @@ function HomePage() {
                         </div>
                     </div>
                     <div>
-                        <h3 className={`mb-0`}>Duy Khang</h3>
+                        <h3 className={`mb-0`}>Đinh Thế Lộc</h3>
                         <p className={`mb-3`}>
-                            Singer/Songwriter <br />
-                            Frontman of Chillies
+                            Software developer <br />
+                            Front-End developer of Zalopay
                         </p>
                         <p className="text-gray-500 font-size-xs">Followed by <span className="text-gray-800 font-family-serif">mrpkhahaha</span>, <span className="text-gray-800 font-family-serif">warnermusic.vietnam</span>, <span className="text-gray-800 font-family-serif">l_.anna._l</span> + 5 <span className="text-underline-warning">more</span></p>
                     </div>
@@ -129,7 +163,7 @@ function HomePage() {
             </div>
             <div className="container">
 
-                <ul class="nav nav-pills mb-3 font-family-serif" id="pills-tab" role="tablist">
+                <ul class="nav nav-pills mb-6 font-family-serif" id="pills-tab" role="tablist">
                     <li class="nav-item flex-fill" role="presentation">
                         <a class="nav-link d-flex justify-content-center align-items-center active" id="pills-posts-tab" data-toggle="pill" href="#pills-posts" role="tab" aria-controls="pills-posts" aria-selected="true">
                             <span className="fe fe-grid mr-2"></span> <span>POSTS</span>
@@ -153,7 +187,28 @@ function HomePage() {
                     </li>
                 </ul>
                 <div class="tab-content" id="pills-tabContent">
-                    <div class="tab-pane fade show active" id="pills-posts" role="tabpanel" aria-labelledby="pills-posts-tab">posts</div>
+                    <div class="tab-pane fade show active" id="pills-posts" role="tabpanel" aria-labelledby="pills-posts-tab">
+                        <div className="row">
+                            <div className="col-sm-4 mb-6">
+                                <img class="img-fluid rounded-top-left lift lift-lg rounded-bottom-right" src="https://scontent-sin6-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/96620438_230574101560151_2539699626693846317_n.jpg?_nc_ht=scontent-sin6-1.cdninstagram.com&_nc_cat=111&_nc_ohc=rBF16rQRB1sAX9fCbzk&oh=82fc51ad09b2ee30160e32a821df825a&oe=5F0ECB70" alt="..." />
+                            </div>
+                            <div className="col-sm-4 mb-6">
+                                <img class="img-fluid rounded-top-left lift lift-lg rounded-bottom-right" src="https://scontent-sin6-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/96620438_230574101560151_2539699626693846317_n.jpg?_nc_ht=scontent-sin6-1.cdninstagram.com&_nc_cat=111&_nc_ohc=rBF16rQRB1sAX9fCbzk&oh=82fc51ad09b2ee30160e32a821df825a&oe=5F0ECB70" alt="..." />
+                            </div>
+                            <div className="col-sm-4 mb-6">
+                                <img class="img-fluid rounded-top-left lift lift-lg rounded-bottom-right" src="https://scontent-sin6-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/96620438_230574101560151_2539699626693846317_n.jpg?_nc_ht=scontent-sin6-1.cdninstagram.com&_nc_cat=111&_nc_ohc=rBF16rQRB1sAX9fCbzk&oh=82fc51ad09b2ee30160e32a821df825a&oe=5F0ECB70" alt="..." />
+                            </div>
+                            <div className="col-sm-4 mb-6">
+                                <img class="img-fluid rounded-top-left lift lift-lg rounded-bottom-right" src="https://scontent-sin6-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/96620438_230574101560151_2539699626693846317_n.jpg?_nc_ht=scontent-sin6-1.cdninstagram.com&_nc_cat=111&_nc_ohc=rBF16rQRB1sAX9fCbzk&oh=82fc51ad09b2ee30160e32a821df825a&oe=5F0ECB70" alt="..." />
+                            </div>
+                            <div className="col-sm-4 mb-6">
+                                <img class="img-fluid rounded-top-left lift lift-lg rounded-bottom-right" src="https://scontent-sin6-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/96620438_230574101560151_2539699626693846317_n.jpg?_nc_ht=scontent-sin6-1.cdninstagram.com&_nc_cat=111&_nc_ohc=rBF16rQRB1sAX9fCbzk&oh=82fc51ad09b2ee30160e32a821df825a&oe=5F0ECB70" alt="..." />
+                            </div>
+                            <div className="col-sm-4 mb-6">
+                                <img class="img-fluid rounded-top-left lift lift-lg rounded-bottom-right" src="https://scontent-sin6-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/96620438_230574101560151_2539699626693846317_n.jpg?_nc_ht=scontent-sin6-1.cdninstagram.com&_nc_cat=111&_nc_ohc=rBF16rQRB1sAX9fCbzk&oh=82fc51ad09b2ee30160e32a821df825a&oe=5F0ECB70" alt="..." />
+                            </div>
+                        </div>
+                    </div>
                     <div class="tab-pane fade" id="pills-igtv" role="tabpanel" aria-labelledby="pills-igtv-tab">igtv</div>
                     <div class="tab-pane fade" id="pills-saved" role="tabpanel" aria-labelledby="pills-saved-tab">saved</div>
                     <div class="tab-pane fade" id="pills-tagged" role="tabpanel" aria-labelledby="pills-tagged-tab">tagged</div>
