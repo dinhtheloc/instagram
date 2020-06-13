@@ -1,46 +1,14 @@
 import React, { useState } from 'react';
 import styles from './style.module.scss';
 import './style.scss';
-import Instafeed from 'instafeed.js';
+import dataInsta from './dataInstagram';
+// import Instafeed from 'instafeed.js';
 
 
 
 
 function HomePage() {
-    const [imagesIns, setImagesIns] = useState([]);
-
-
-    const feed = new Instafeed({
-        get: 'user',
-        userId: '11145957073',
-        accessToken: '11145957073.1677ed0.30c99e780de74513ac19e3a970def157',
-        target: 'instafeed',
-        resolution: 'standard_resolution',
-        template: '<div data-link="{{link}}" data-src="{{image}}"></div>',
-        success: (argument) => {
-            console.log(argument);
-            // imagesIns = argument;
-            setImagesIns(argument.data);
-            console.log('imagesIns', imagesIns);
-            //   argument.data.map((i) => {
-            //   console.log()
-
-            // this.setState(prevState => ({
-            //   imagesIns: [
-            //     ...prevState.imagesIns,
-            //     {
-            //       link: i.link,
-            //       img: i.images.standard_resolution.url,
-            //       likes: i.likes.count,
-            //       comments: i.comments.count,
-            //       isHover: false
-            //     }]
-            // }));
-            //   });
-        }
-    });
-    feed.run();
-
+    console.log(dataInsta);
     const stories = [
         {
             pathImage: 'https://instagram.fsgn5-4.fna.fbcdn.net/v/t51.2885-15/e35/90707976_143536407176234_8897186274773102090_n.jpg?_nc_ht=instagram.fsgn5-4.fna.fbcdn.net&_nc_cat=102&_nc_ohc=gggkMJBRfSMAX_DBp_P&oh=076993dcba9162f95bd14be8c115c85e&oe=5F0BB3FA',
@@ -163,55 +131,51 @@ function HomePage() {
             </div>
             <div className="container">
 
-                <ul class="nav nav-pills mb-6 font-family-serif" id="pills-tab" role="tablist">
-                    <li class="nav-item flex-fill" role="presentation">
-                        <a class="nav-link d-flex justify-content-center align-items-center active" id="pills-posts-tab" data-toggle="pill" href="#pills-posts" role="tab" aria-controls="pills-posts" aria-selected="true">
+                <ul className="nav nav-pills mb-6 font-family-serif" id="pills-tab" role="tablist">
+                    <li className="nav-item flex-fill" role="presentation">
+                        <a className="nav-link d-flex justify-content-center align-items-center active" id="pills-posts-tab" data-toggle="pill" href="#pills-posts" role="tab" aria-controls="pills-posts" aria-selected="true">
                             <span className="fe fe-grid mr-2"></span> <span>POSTS</span>
                         </a>
                     </li>
-                    <li class="nav-item flex-fill" role="presentation">
-                        <a class="nav-link d-flex justify-content-center align-items-center" id="pills-igtv-tab" data-toggle="pill" href="#pills-igtv" role="tab" aria-controls="pills-igtv" aria-selected="false">
+                    <li className="nav-item flex-fill" role="presentation">
+                        <a className="nav-link d-flex justify-content-center align-items-center" id="pills-igtv-tab" data-toggle="pill" href="#pills-igtv" role="tab" aria-controls="pills-igtv" aria-selected="false">
                             <span className="fe fe-tv mr-2"></span> <span>IGTV</span>
                         </a>
                     </li>
-                    <li class="nav-item flex-fill" role="presentation">
-                        <a class="nav-link d-flex justify-content-center align-items-center" id="pills-saved-tab" data-toggle="pill" href="#pills-saved" role="tab" aria-controls="pills-saved" aria-selected="false">
+                    <li className="nav-item flex-fill" role="presentation">
+                        <a className="nav-link d-flex justify-content-center align-items-center" id="pills-saved-tab" data-toggle="pill" href="#pills-saved" role="tab" aria-controls="pills-saved" aria-selected="false">
 
                             <span className="fe fe-bookmark mr-2"></span> <span>SAVED</span>
                         </a>
                     </li>
-                    <li class="nav-item flex-fill" role="presentation">
-                        <a class="nav-link d-flex justify-content-center align-items-center" id="pills-tagged-tab" data-toggle="pill" href="#pills-tagged" role="tab" aria-controls="pills-tagged" aria-selected="false">
+                    <li className="nav-item flex-fill" role="presentation">
+                        <a className="nav-link d-flex justify-content-center align-items-center" id="pills-tagged-tab" data-toggle="pill" href="#pills-tagged" role="tab" aria-controls="pills-tagged" aria-selected="false">
                             <span className="fe fe-user mr-2"></span> <span>TAGGED</span>
                         </a>
                     </li>
                 </ul>
-                <div class="tab-content" id="pills-tabContent">
-                    <div class="tab-pane fade show active" id="pills-posts" role="tabpanel" aria-labelledby="pills-posts-tab">
+                <div className="tab-content" id="pills-tabContent">
+                    <div className="tab-pane fade show active" id="pills-posts" role="tabpanel" aria-labelledby="pills-posts-tab">
                         <div className="row">
-                            <div className="col-sm-4 mb-6">
-                                <img class="img-fluid rounded-top-left lift lift-lg rounded-bottom-right" src="https://scontent-sin6-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/96620438_230574101560151_2539699626693846317_n.jpg?_nc_ht=scontent-sin6-1.cdninstagram.com&_nc_cat=111&_nc_ohc=rBF16rQRB1sAX9fCbzk&oh=82fc51ad09b2ee30160e32a821df825a&oe=5F0ECB70" alt="..." />
-                            </div>
-                            <div className="col-sm-4 mb-6">
-                                <img class="img-fluid rounded-top-left lift lift-lg rounded-bottom-right" src="https://scontent-sin6-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/96620438_230574101560151_2539699626693846317_n.jpg?_nc_ht=scontent-sin6-1.cdninstagram.com&_nc_cat=111&_nc_ohc=rBF16rQRB1sAX9fCbzk&oh=82fc51ad09b2ee30160e32a821df825a&oe=5F0ECB70" alt="..." />
-                            </div>
-                            <div className="col-sm-4 mb-6">
-                                <img class="img-fluid rounded-top-left lift lift-lg rounded-bottom-right" src="https://scontent-sin6-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/96620438_230574101560151_2539699626693846317_n.jpg?_nc_ht=scontent-sin6-1.cdninstagram.com&_nc_cat=111&_nc_ohc=rBF16rQRB1sAX9fCbzk&oh=82fc51ad09b2ee30160e32a821df825a&oe=5F0ECB70" alt="..." />
-                            </div>
-                            <div className="col-sm-4 mb-6">
-                                <img class="img-fluid rounded-top-left lift lift-lg rounded-bottom-right" src="https://scontent-sin6-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/96620438_230574101560151_2539699626693846317_n.jpg?_nc_ht=scontent-sin6-1.cdninstagram.com&_nc_cat=111&_nc_ohc=rBF16rQRB1sAX9fCbzk&oh=82fc51ad09b2ee30160e32a821df825a&oe=5F0ECB70" alt="..." />
-                            </div>
-                            <div className="col-sm-4 mb-6">
-                                <img class="img-fluid rounded-top-left lift lift-lg rounded-bottom-right" src="https://scontent-sin6-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/96620438_230574101560151_2539699626693846317_n.jpg?_nc_ht=scontent-sin6-1.cdninstagram.com&_nc_cat=111&_nc_ohc=rBF16rQRB1sAX9fCbzk&oh=82fc51ad09b2ee30160e32a821df825a&oe=5F0ECB70" alt="..." />
-                            </div>
-                            <div className="col-sm-4 mb-6">
-                                <img class="img-fluid rounded-top-left lift lift-lg rounded-bottom-right" src="https://scontent-sin6-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/96620438_230574101560151_2539699626693846317_n.jpg?_nc_ht=scontent-sin6-1.cdninstagram.com&_nc_cat=111&_nc_ohc=rBF16rQRB1sAX9fCbzk&oh=82fc51ad09b2ee30160e32a821df825a&oe=5F0ECB70" alt="..." />
-                            </div>
+                            {
+                                dataInsta.map((item) => (
+                                    <div className={`${styles.thumbnail} col-sm-4 mb-6 position-relative`}>
+                                        <img className="img-fluid rounded-top-left lift lift-lg rounded-bottom-right"
+                                            src={item.images.standard_resolution.url} alt={item.id} />
+                                        <div className={`${styles.middle}`}>
+                                            <div className="font-size-lg">
+                                                <span className="fe fe-heart mr-1"></span>{item.likes.count || 0}<span className="fe fe-message-circle ml-4 mr-1"></span>{item.likes.comments || 0}
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))
+                            }
+
                         </div>
                     </div>
-                    <div class="tab-pane fade" id="pills-igtv" role="tabpanel" aria-labelledby="pills-igtv-tab">igtv</div>
-                    <div class="tab-pane fade" id="pills-saved" role="tabpanel" aria-labelledby="pills-saved-tab">saved</div>
-                    <div class="tab-pane fade" id="pills-tagged" role="tabpanel" aria-labelledby="pills-tagged-tab">tagged</div>
+                    <div className="tab-pane fade" id="pills-igtv" role="tabpanel" aria-labelledby="pills-igtv-tab">igtv</div>
+                    <div className="tab-pane fade" id="pills-saved" role="tabpanel" aria-labelledby="pills-saved-tab">saved</div>
+                    <div className="tab-pane fade" id="pills-tagged" role="tabpanel" aria-labelledby="pills-tagged-tab">tagged</div>
                 </div>
             </div>
 
