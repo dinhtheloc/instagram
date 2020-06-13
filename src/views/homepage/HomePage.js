@@ -183,19 +183,106 @@ function HomePage() {
                     <div className="tab-pane fade" id="pills-tagged" role="tabpanel" aria-labelledby="pills-tagged-tab">tagged</div>
                 </div>
             </div>
+            {/* modal detail post */}
             <div className="modal fade show" id="modalImage" tabindex="-1" role="dialog" aria-labelledby="modalSaleHeading" aria-modal="true">
                 <div className="modal-dialog modal-xl modal-dialog-centered" role="document">
-                    <div className="modal-content d-flex">
-                        <div>
-                        <img class="img-fluid rounded-top-left-lg rounded-bottom-right-lg shadow-lg" 
-                        src="https://instagram.fhan2-2.fna.fbcdn.net/v/t51.2885-15/e35/s1080x1080/96620438_230574101560151_2539699626693846317_n.jpg?_nc_ht=instagram.fhan2-2.fna.fbcdn.net&_nc_cat=111&_nc_ohc=fSkEF4gc2JIAX81JlP5&oh=fd98c42435d284bfbc8fbceb558c8f8f&oe=5F0ECB70" alt="96620438_230574101560151_2539699626693846317_n"/>
-                        </div>
-                        <div className="flex-fill">2</div>
+                    <div className="modal-content">
+                        <div className="d-flex">
+                            <div className={`flex-fill ${styles.contentImage}`}>
+                                <img className="img-fluid rounded-top-left-lg shadow-lg"
+                                    src="https://instagram.fhan2-2.fna.fbcdn.net/v/t51.2885-15/e35/s1080x1080/96620438_230574101560151_2539699626693846317_n.jpg?_nc_ht=instagram.fhan2-2.fna.fbcdn.net&_nc_cat=111&_nc_ohc=fSkEF4gc2JIAX81JlP5&oh=fd98c42435d284bfbc8fbceb558c8f8f&oe=5F0ECB70" alt="96620438_230574101560151_2539699626693846317_n" />
+                            </div>
+                            <div className={`${styles.w350}`}>
+                                <div className="d-flex align-items-center p-4">
+                                    <div className={`avatar ${styles.avatar32}`}>
+                                        <img className="avatar-img rounded-circle" src="https://instagram.fhan2-3.fna.fbcdn.net/v/t51.2885-19/s320x320/96292822_244805370090236_7062501899211112448_n.jpg?_nc_ht=instagram.fhan2-3.fna.fbcdn.net&_nc_ohc=kAlED3kvz-4AX9aKVge&oh=2ecd67c84b4bb2ff9e5b8ec6c9526a56&oe=5EF797E4" alt="..." />
+                                    </div>
+                                    <div className="ml-4">
+                                        <h4 className="font-family-sans-serif mb-0">
+                                            locdt94
+                                        </h4>
+                                        <p className="small text-muted mt-n1 mb-0">
+                                            April 19, 2020
+                                        </p>
+                                    </div>
+                                    <div className="text-right flex-fill">
+                                        <span className="fe fe-more-horizontal"></span>
+                                    </div>
+                                </div>
+                                <hr class="hr-sm border-top-3 mb-4"></hr>
 
-                        {/* <div class="modal-body text-center">
-                            <button class="modal-close close" data-dismiss="modal" type="button" aria-label="Close">
+                                {/* comments */}
+                                <div className="d-flex align-items-center p-4">
+                                    <div className={`avatar`}>
+                                        <img className={`avatar-img rounded-circle ${styles.avatar32}`}
+                                        
+                                        src="https://instagram.fhan2-5.fna.fbcdn.net/v/t51.2885-19/s150x150/95598921_232043931397017_6514204024856641536_n.jpg?_nc_ht=instagram.fhan2-5.fna.fbcdn.net&_nc_ohc=C19-4gRbiIMAX8Zb1QH&oh=1f1863b504042b42fecfbed21ecc4467&oe=5F0E911A" alt="..." />
+                                    </div>
+                                    <div className="ml-4">
+                                        <p className="font-family-sans-serif mb-0">
+                                            <span className="font-weight-bold">dung.azoth</span> <span>💓10052020</span>
+                                        </p>
+                                        <div className={`small text-muted mt-2 mb-0`}>
+                                            <span>4w</span> <span className={`ml-2 mr-2`}>1 like</span> <a href="#"><span className="font-weight-bold">Reply</span></a>
+                                        </div>
+                                    </div>
+                                    <div className="text-right flex-fill">
+                                        <span className="fe fe-heart"></span>
+                                    </div>
+                                </div>
+
+                                <div className="d-flex align-items-center p-4">
+                                    <div className={`avatar ${styles.avatar32}`}>
+                                        <img className={`avatar-img rounded-circle ${styles.avatar32}`} src="https://instagram.fhan2-5.fna.fbcdn.net/v/t51.2885-19/s150x150/76910257_605271720280891_944345570451914752_n.jpg?_nc_ht=instagram.fhan2-5.fna.fbcdn.net&_nc_ohc=Q2dKPXkxvAIAX_I5aF6&oh=597377b65e15f59ee2d4d81276a02c55&oe=5F0C3E98" alt="..." />
+                                    </div>
+                                    <div className="ml-4">
+                                        <p className="font-family-sans-serif mb-0">
+                                            <span className="font-weight-bold">minhphuoc38</span> <span>:O hình thật hả? Đẹp quá</span>
+                                        </p>
+                                        <div className={`small text-muted mt-2 mb-0`}>
+                                            <span>1w</span> <span className={`ml-2 mr-2`}>1 like</span> <a href="#"><span className="font-weight-bold">Reply</span></a>
+                                        </div>
+
+                                        <div className={`${styles.reply}`}>
+                                            <hr className={`${styles.hr}`} />
+                                            <span className="font-weight-bold">Hide replies</span>
+                                        </div>
+                                    </div>
+                                    <div className="text-right flex-fill">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"></path><path d="M16.5 4.5c-1.61 0-3.492 1.825-4.5 3-1.008-1.175-2.89-3-4.5-3C4.651 4.5 3 6.722 3 9.55c0 3.133 3 6.45 9 9.95 6-3.5 9-6.75 9-9.75 0-2.828-1.651-5.25-4.5-5.25z" fill="#335EEA"></path></g></svg>
+                                    </div>
+                                </div>
+                                {/* reply */}
+                                <div className="d-flex align-items-center p-4">
+                                    <div className={`avatar ${styles.avatar32}`}>
+                                    </div>
+                                    <div className="ml-4 d-flex">
+                                        <div className={`avatar ${styles.avatar32}`}>
+                                            <img className={`avatar-img rounded-circle ${styles.avatar32}`} src="https://instagram.fhan2-5.fna.fbcdn.net/v/t51.2885-19/s150x150/96292822_244805370090236_7062501899211112448_n.jpg?_nc_ht=instagram.fhan2-5.fna.fbcdn.net&_nc_ohc=OytgwD-Ad0IAX92Io_I&oh=a5851c7f11a984d7d38fe1476789052b&oe=5F0FF694" alt="..." />
+                                        </div>
+                                        <div className="ml-4 flex-fill">
+                                            <p className="font-family-sans-serif mb-0 text-break">
+                                                <span className="font-weight-bold">locdt94</span> <span>@minhphuoc38 🤣🤣🤣🤣 dạ. Nhiều người cứ bị em lừa là hình dán 🤣🤣🤣</span>
+                                            </p>
+                                            <div className={`small text-muted mt-2 mb-0`}>
+                                                <span>1w</span> <span className={`ml-2 mr-2`}>1 like</span> <a href="#"><span className="font-weight-bold">Reply</span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="text-right flex-fill">
+                                        {/* <span className="fe fe-heart"></span> */}
+                                        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"></path><path d="M16.5 4.5c-1.61 0-3.492 1.825-4.5 3-1.008-1.175-2.89-3-4.5-3C4.651 4.5 3 6.722 3 9.55c0 3.133 3 6.45 9 9.95 6-3.5 9-6.75 9-9.75 0-2.828-1.651-5.25-4.5-5.25z" fill="#335EEA"></path></g></svg>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        {/* <div className="modal-body text-center">
+                            <button className="modal-close close" data-dismiss="modal" type="button" aria-label="Close">
                                 <span aria-hidden="true">
-                                    <i class="fe fe-x"></i>
+                                    <i className="fe fe-x"></i>
                                 </span>
                             </button>
                         </div> */}
