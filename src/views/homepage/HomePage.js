@@ -50,6 +50,7 @@ function HomePage() {
     return (
         <>
             <div id="instafeed" className="hidden"></div>
+
             <div className="container mt-6 d-flex">
                 <div className={`${styles.avatarUser}`}>
                     <div className="avatar avatar-xxl">
@@ -103,15 +104,17 @@ function HomePage() {
                         </div>
                     </div>
                     <div>
-                        <h3 className={`mb-0`}>Đinh Thế Lộc</h3>
+                        <h3 className={`mb-0`}>Dinh The Loc</h3>
                         <p className={`mb-3`}>
-                            Software developer <br />
+                            Software developer of VNG Corporation<br />
                             Front-End developer of Zalopay
                         </p>
                         <p className="text-gray-500 font-size-xs">Followed by <span className="text-gray-800 font-family-serif">mrpkhahaha</span>, <span className="text-gray-800 font-family-serif">warnermusic.vietnam</span>, <span className="text-gray-800 font-family-serif">l_.anna._l</span> + 5 <span className="text-underline-warning">more</span></p>
                     </div>
                 </div>
             </div>
+
+
 
             <div className={`container mb-6 bg-checkered`}>
                 <div className={`${styles.stories}`}>
@@ -159,7 +162,9 @@ function HomePage() {
                         <div className="row">
                             {
                                 dataInsta.map((item) => (
-                                    <div className={`${styles.thumbnail} col-sm-4 mb-6 position-relative`}>
+                                    <div
+                                        data-target="#modalImage" data-toggle="modal"
+                                        className={`${styles.thumbnail} col-sm-4 mb-6 position-relative`}>
                                         <img className="img-fluid rounded-top-left lift lift-lg rounded-bottom-right"
                                             src={item.images.standard_resolution.url} alt={item.id} />
                                         <div className={`${styles.middle}`}>
@@ -178,7 +183,25 @@ function HomePage() {
                     <div className="tab-pane fade" id="pills-tagged" role="tabpanel" aria-labelledby="pills-tagged-tab">tagged</div>
                 </div>
             </div>
+            <div className="modal fade show" id="modalImage" tabindex="-1" role="dialog" aria-labelledby="modalSaleHeading" aria-modal="true">
+                <div className="modal-dialog modal-xl modal-dialog-centered" role="document">
+                    <div className="modal-content d-flex">
+                        <div>
+                        <img class="img-fluid rounded-top-left-lg rounded-bottom-right-lg shadow-lg" 
+                        src="https://instagram.fhan2-2.fna.fbcdn.net/v/t51.2885-15/e35/s1080x1080/96620438_230574101560151_2539699626693846317_n.jpg?_nc_ht=instagram.fhan2-2.fna.fbcdn.net&_nc_cat=111&_nc_ohc=fSkEF4gc2JIAX81JlP5&oh=fd98c42435d284bfbc8fbceb558c8f8f&oe=5F0ECB70" alt="96620438_230574101560151_2539699626693846317_n"/>
+                        </div>
+                        <div className="flex-fill">2</div>
 
+                        {/* <div class="modal-body text-center">
+                            <button class="modal-close close" data-dismiss="modal" type="button" aria-label="Close">
+                                <span aria-hidden="true">
+                                    <i class="fe fe-x"></i>
+                                </span>
+                            </button>
+                        </div> */}
+                    </div>
+                </div>
+            </div>
         </>
     );
 }
