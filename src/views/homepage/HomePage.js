@@ -120,7 +120,7 @@ function HomePage() {
                 <div className={`${styles.stories}`}>
                     {
                         stories.map((item) => (
-                            <div className={`avatar avatar-lg ${styles.item}`}>
+                            <div key={item.title} className={`avatar avatar-lg ${styles.item}`}>
                                 <a className={`${styles.hoverStories}`} href="#">
                                     <div className={`${styles.gradientStories}`}>
                                         <img src={`${item.pathImage}`} alt={`${item.title}`} className={`avatar-img rounded-circle ${styles.fixSize}`} />
@@ -163,6 +163,7 @@ function HomePage() {
                             {
                                 dataInsta.map((item) => (
                                     <div
+                                        key={item.id}
                                         data-target="#modalImage" data-toggle="modal"
                                         className={`${styles.thumbnail} col-sm-4 mb-6 position-relative`}>
                                         <img className="img-fluid rounded-top-left lift lift-lg rounded-bottom-right"
@@ -184,7 +185,7 @@ function HomePage() {
                 </div>
             </div>
             {/* modal detail post */}
-            <div className="modal fade show" id="modalImage" tabindex="-1" role="dialog" aria-labelledby="modalSaleHeading" aria-modal="true">
+            <div className="modal fade show" id="modalImage" tabIndex="-1" role="dialog" aria-labelledby="modalSaleHeading" aria-modal="true">
                 <div className="modal-dialog modal-xl modal-dialog-centered" role="document">
                     <div className="modal-content">
                         <div className="d-flex">
@@ -209,72 +210,101 @@ function HomePage() {
                                         <span className="fe fe-more-horizontal"></span>
                                     </div>
                                 </div>
-                                <hr class="hr-sm border-top-3 mb-4"></hr>
+                                <hr className={`${styles.linehr} hr-sm border-top-3`}></hr>
 
-                                {/* comments */}
-                                <div className="d-flex align-items-center p-4">
-                                    <div className={`avatar`}>
-                                        <img className={`avatar-img rounded-circle ${styles.avatar32}`}
-                                        
-                                        src="https://instagram.fhan2-5.fna.fbcdn.net/v/t51.2885-19/s150x150/95598921_232043931397017_6514204024856641536_n.jpg?_nc_ht=instagram.fhan2-5.fna.fbcdn.net&_nc_ohc=C19-4gRbiIMAX8Zb1QH&oh=1f1863b504042b42fecfbed21ecc4467&oe=5F0E911A" alt="..." />
-                                    </div>
-                                    <div className="ml-4">
-                                        <p className="font-family-sans-serif mb-0">
-                                            <span className="font-weight-bold">dung.azoth</span> <span>💓10052020</span>
-                                        </p>
-                                        <div className={`small text-muted mt-2 mb-0`}>
-                                            <span>4w</span> <span className={`ml-2 mr-2`}>1 like</span> <a href="#"><span className="font-weight-bold">Reply</span></a>
-                                        </div>
-                                    </div>
-                                    <div className="text-right flex-fill">
-                                        <span className="fe fe-heart"></span>
-                                    </div>
-                                </div>
+                                <div className={styles.contentCommnets}>
+                                    {/* comments */}
+                                    <div className="d-flex align-items-start p-4">
+                                        <div className={``}>
+                                            <img className={`avatar-img rounded-circle ${styles.avatar32}`}
 
-                                <div className="d-flex align-items-center p-4">
-                                    <div className={`avatar ${styles.avatar32}`}>
-                                        <img className={`avatar-img rounded-circle ${styles.avatar32}`} src="https://instagram.fhan2-5.fna.fbcdn.net/v/t51.2885-19/s150x150/76910257_605271720280891_944345570451914752_n.jpg?_nc_ht=instagram.fhan2-5.fna.fbcdn.net&_nc_ohc=Q2dKPXkxvAIAX_I5aF6&oh=597377b65e15f59ee2d4d81276a02c55&oe=5F0C3E98" alt="..." />
-                                    </div>
-                                    <div className="ml-4">
-                                        <p className="font-family-sans-serif mb-0">
-                                            <span className="font-weight-bold">minhphuoc38</span> <span>:O hình thật hả? Đẹp quá</span>
-                                        </p>
-                                        <div className={`small text-muted mt-2 mb-0`}>
-                                            <span>1w</span> <span className={`ml-2 mr-2`}>1 like</span> <a href="#"><span className="font-weight-bold">Reply</span></a>
+                                                src="https://instagram.fhan2-5.fna.fbcdn.net/v/t51.2885-19/s150x150/95598921_232043931397017_6514204024856641536_n.jpg?_nc_ht=instagram.fhan2-5.fna.fbcdn.net&_nc_ohc=C19-4gRbiIMAX8Zb1QH&oh=1f1863b504042b42fecfbed21ecc4467&oe=5F0E911A" alt="..." />
                                         </div>
+                                        <div className="ml-4">
+                                            <p className="font-family-sans-serif mb-0">
+                                                <span className="font-weight-bold">dung.azoth</span> <span>💓10052020</span>
+                                            </p>
+                                            <div className={`small text-muted mt-2 mb-0`}>
+                                                <span>4w</span> <span className={`ml-2 mr-2`}>1 like</span> <a href="#"><span className="font-weight-bold">Reply</span></a>
+                                            </div>
+                                        </div>
+                                        <div className="text-right flex-fill">
+                                            <span className="fe fe-heart"></span>
+                                        </div>
+                                    </div>
 
-                                        <div className={`${styles.reply}`}>
-                                            <hr className={`${styles.hr}`} />
-                                            <span className="font-weight-bold">Hide replies</span>
+                                    <div className="d-flex align-items-start p-4">
+                                        <div className={`${styles.avatar32}`}>
+                                            <img className={`avatar-img rounded-circle ${styles.avatar32}`} src="https://instagram.fhan2-5.fna.fbcdn.net/v/t51.2885-19/s150x150/76910257_605271720280891_944345570451914752_n.jpg?_nc_ht=instagram.fhan2-5.fna.fbcdn.net&_nc_ohc=Q2dKPXkxvAIAX_I5aF6&oh=597377b65e15f59ee2d4d81276a02c55&oe=5F0C3E98" alt="..." />
                                         </div>
-                                    </div>
-                                    <div className="text-right flex-fill">
-                                        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"></path><path d="M16.5 4.5c-1.61 0-3.492 1.825-4.5 3-1.008-1.175-2.89-3-4.5-3C4.651 4.5 3 6.722 3 9.55c0 3.133 3 6.45 9 9.95 6-3.5 9-6.75 9-9.75 0-2.828-1.651-5.25-4.5-5.25z" fill="#335EEA"></path></g></svg>
-                                    </div>
-                                </div>
-                                {/* reply */}
-                                <div className="d-flex align-items-center p-4">
-                                    <div className={`avatar ${styles.avatar32}`}>
-                                    </div>
-                                    <div className="ml-4 d-flex">
-                                        <div className={`avatar ${styles.avatar32}`}>
-                                            <img className={`avatar-img rounded-circle ${styles.avatar32}`} src="https://instagram.fhan2-5.fna.fbcdn.net/v/t51.2885-19/s150x150/96292822_244805370090236_7062501899211112448_n.jpg?_nc_ht=instagram.fhan2-5.fna.fbcdn.net&_nc_ohc=OytgwD-Ad0IAX92Io_I&oh=a5851c7f11a984d7d38fe1476789052b&oe=5F0FF694" alt="..." />
-                                        </div>
-                                        <div className="ml-4 flex-fill">
-                                            <p className="font-family-sans-serif mb-0 text-break">
-                                                <span className="font-weight-bold">locdt94</span> <span>@minhphuoc38 🤣🤣🤣🤣 dạ. Nhiều người cứ bị em lừa là hình dán 🤣🤣🤣</span>
+                                        <div className="ml-4">
+                                            <p className="font-family-sans-serif mb-0">
+                                                <span className="font-weight-bold">minhphuoc38</span> <span>:O hình thật hả? Đẹp quá</span>
                                             </p>
                                             <div className={`small text-muted mt-2 mb-0`}>
                                                 <span>1w</span> <span className={`ml-2 mr-2`}>1 like</span> <a href="#"><span className="font-weight-bold">Reply</span></a>
                                             </div>
+
+                                            <div className={`${styles.reply}`}>
+                                                <hr className={`${styles.hr}`} />
+                                                <span className="font-weight-bold">Hide replies</span>
+                                            </div>
+                                        </div>
+                                        <div className="text-right flex-fill">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fillRule="evenodd"><path d="M0 0h24v24H0z"></path><path d="M16.5 4.5c-1.61 0-3.492 1.825-4.5 3-1.008-1.175-2.89-3-4.5-3C4.651 4.5 3 6.722 3 9.55c0 3.133 3 6.45 9 9.95 6-3.5 9-6.75 9-9.75 0-2.828-1.651-5.25-4.5-5.25z" fill="#335EEA"></path></g></svg>
                                         </div>
                                     </div>
-                                    <div className="text-right flex-fill">
-                                        {/* <span className="fe fe-heart"></span> */}
-                                        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M0 0h24v24H0z"></path><path d="M16.5 4.5c-1.61 0-3.492 1.825-4.5 3-1.008-1.175-2.89-3-4.5-3C4.651 4.5 3 6.722 3 9.55c0 3.133 3 6.45 9 9.95 6-3.5 9-6.75 9-9.75 0-2.828-1.651-5.25-4.5-5.25z" fill="#335EEA"></path></g></svg>
+                                    {/* reply */}
+                                    <div className="d-flex align-items-start pl-4 pr-4 pb-4">
+                                        <div className={`${styles.avatar32}`}>
+                                        </div>
+                                        <div className="ml-4 d-flex">
+                                            <div className={`${styles.avatar32}`}>
+                                                <img className={`avatar-img rounded-circle ${styles.avatar32}`} src="https://instagram.fhan2-5.fna.fbcdn.net/v/t51.2885-19/s150x150/96292822_244805370090236_7062501899211112448_n.jpg?_nc_ht=instagram.fhan2-5.fna.fbcdn.net&_nc_ohc=OytgwD-Ad0IAX92Io_I&oh=a5851c7f11a984d7d38fe1476789052b&oe=5F0FF694" alt="..." />
+                                            </div>
+                                            <div className="ml-4 flex-fill">
+                                                <p className="font-family-sans-serif mb-0 text-break">
+                                                    <span className="font-weight-bold">locdt94</span> <span>@minhphuoc38 🤣🤣🤣🤣 dạ. Nhiều người cứ bị em lừa là hình dán 🤣🤣🤣</span>
+                                                </p>
+                                                <div className={`small text-muted mt-2 mb-0`}>
+                                                    <span>1w</span> <span className={`ml-2 mr-2`}>1 like</span> <a href="#"><span className="font-weight-bold">Reply</span></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="text-right flex-fill">
+                                            {/* <span className="fe fe-heart"></span> */}
+                                            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fillRule="evenodd"><path d="M0 0h24v24H0z"></path><path d="M16.5 4.5c-1.61 0-3.492 1.825-4.5 3-1.008-1.175-2.89-3-4.5-3C4.651 4.5 3 6.722 3 9.55c0 3.133 3 6.45 9 9.95 6-3.5 9-6.75 9-9.75 0-2.828-1.651-5.25-4.5-5.25z" fill="#335EEA"></path></g></svg>
+                                        </div>
                                     </div>
+
                                 </div>
 
+                                <hr className={`${styles.linehr} hr-sm border-top-3`}></hr>
+                                <div className="d-flex p-4">
+                                    <div className="h2 m-0">
+                                        <span className="fe fe-heart mr-2"></span>
+
+                                        <span className="fe fe-message-circle mr-2"></span>
+
+                                        <span className="fe fe-send"></span>
+                                    </div>
+                                    <div className="ml-auto h2 m-0">
+                                        <span className="fe fe-bookmark"></span>
+                                    </div>
+                                </div>
+                                <div className="pl-4 pr-4">
+                                    <p className="mb-4">Liked by <span className="font-weight-bold">l_.anna._l</span> and <span className="font-weight-bold">2 others</span></p>
+                                </div>
+                                <hr className={`${styles.linehr} hr-sm border-top-3`}></hr>
+
+                                <div className="d-flex p-4">
+                                    <div className="flex-fill">
+                                        <input className={styles.inputComment} placeholder="Add a comment…" type="text"></input>
+                                    </div>
+                                    <div className="ml-4">
+                                        <span>Post</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
