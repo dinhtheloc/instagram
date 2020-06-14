@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styles from './style.module.scss';
-import './style.scss';
 import dataInsta from './dataInstagram';
 // import Instafeed from 'instafeed.js';
 
@@ -179,9 +178,28 @@ function HomePage() {
 
                         </div>
                     </div>
-                    <div className="tab-pane fade" id="pills-igtv" role="tabpanel" aria-labelledby="pills-igtv-tab">igtv</div>
-                    <div className="tab-pane fade" id="pills-saved" role="tabpanel" aria-labelledby="pills-saved-tab">saved</div>
-                    <div className="tab-pane fade" id="pills-tagged" role="tabpanel" aria-labelledby="pills-tagged-tab">tagged</div>
+                    <div className="tab-pane fade" id="pills-igtv" role="tabpanel" aria-labelledby="pills-igtv-tab">
+                        <div className="text-center">
+                            <span className={`${styles.fz70} fe fe-tv mt-6`}></span>
+                            <h1 className="mt-4">Upload a Video</h1>
+                            <p>Videos must be between 1 and 60 minutes long.</p>
+                            <button className="btn btn-primary">Upload</button>
+                        </div>
+                    </div>
+                    <div className="tab-pane fade" id="pills-saved" role="tabpanel" aria-labelledby="pills-saved-tab">
+                    <div className="text-center">
+                            <span className={`${styles.fz70} fe fe-bookmark mt-6`}></span>
+                            <h1 className="mt-4">Save</h1>
+                            <p>Save photos and videos that you want to see again. No one is notified, and only you can see what you've saved.</p>
+                        </div>
+                    </div>
+                    <div className="tab-pane fade" id="pills-tagged" role="tabpanel" aria-labelledby="pills-tagged-tab">
+                    <div className="text-center">
+                            <span className={`${styles.fz70} fe fe-user mt-6`}></span>
+                            <h1 className="mt-4">Photos of you</h1>
+                            <p>When people tag you in photos, they'll appear here.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             {/* modal detail post */}
@@ -307,15 +325,6 @@ function HomePage() {
                                 </div>
                             </div>
                         </div>
-
-
-                        {/* <div className="modal-body text-center">
-                            <button className="modal-close close" data-dismiss="modal" type="button" aria-label="Close">
-                                <span aria-hidden="true">
-                                    <i className="fe fe-x"></i>
-                                </span>
-                            </button>
-                        </div> */}
                     </div>
                 </div>
             </div>
