@@ -54,7 +54,7 @@ function HomePage() {
                 <div className={`${styles.avatarUser}`}>
                     <div className="avatar avatar-xxl">
                         <div className={`${styles.gradientAvt}`}>
-                            <img src="https://instagram.fhan2-3.fna.fbcdn.net/v/t51.2885-19/s320x320/96292822_244805370090236_7062501899211112448_n.jpg?_nc_ht=instagram.fhan2-3.fna.fbcdn.net&_nc_ohc=kAlED3kvz-4AX9aKVge&oh=2ecd67c84b4bb2ff9e5b8ec6c9526a56&oe=5EF797E4" alt="..." className="avatar-img rounded-circle" />
+                            <img src="/img/avt.jpg" alt="..." className="avatar-img rounded-circle" />
                         </div>
                     </div>
                 </div>
@@ -197,7 +197,7 @@ function HomePage() {
                     <div className="text-center">
                             <span className={`${styles.fz70} fe fe-user mt-6`}></span>
                             <h1 className="mt-4">Photos of you</h1>
-                            <p>When people tag you in photos, they'll appear here.</p>
+                            <p>When people tag you in photos, they'll appear here.y</p>
                         </div>
                     </div>
                 </div>
